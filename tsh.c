@@ -191,12 +191,12 @@ printf("%s : command not found\n",argv[0]);
 exit (0);
 }
 if(!bg){
-addjob(jobs,pid,FG,cmdline);
+addjob(jobs,pid,FG,cmdline);    //add jobs to job table for foreground process
 sigprocmask(SIG_UNBLOCK,&sSet,NULL);
 waitfg(pid);
 }
 else{
-addjob(jobs,pid,BG,cmdline);
+addjob(jobs,pid,BG,cmdline);   //add jobs to job table for background process
 sigprocmask(SIG_UNBLOCK,&sSet,NULL);
 printf("[%d] (%d) %s",pid2jid(pid),pid,cmdline);
 }
@@ -271,10 +271,8 @@ int builtin_cmd(char **argv)
 {
 //cheaking condition if command is "quit"
 if(!strcmp("quit",argv[0])){  
-  //still to make design
-  /*mean to cheak exit only if no background process exist else print message 
-  that it is not possible to exit bcoz there is bg process running*/
 int i;
+//cheaking all the jobs are finish in background 	
 for(i=0;i<MAXJOBS;i++){
 if(jobs[i].state==BG){
 waitfg(jobs[i].pid);
