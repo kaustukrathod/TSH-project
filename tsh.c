@@ -1,7 +1,7 @@
 /* 
  * tsh - A tiny shell program with job control
  * 
- * <Put your name and login ID here>
+ * <Name : Kaustuk Rathod and id : 201501137  Email-Id : 201501137@daiict.ac.in>
  */
 #include <stdio.h>
 #include <stdlib.h>
