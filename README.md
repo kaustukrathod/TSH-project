@@ -1,2 +1,2 @@
 # TSH-project
-it is project basic on developing the shell using c language 
+it is project basic to develop the shell using c language 
